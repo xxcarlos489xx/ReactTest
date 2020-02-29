@@ -1,15 +1,38 @@
-import React from 'react';
+//const React = require('react')
+import React, {useState} from 'react'
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
+const App = () => {
+
+    const [name, setName] = useState('carlos')
+
+    const [contador,setContador] = useState(0);
+
+    const sumar = () => {
+        setContador(contador+1)
+    }
+
+    const restar = () =>{
+        setContador(contador-1)
+    }
+
+    return(
+        <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+            <div>{name}</div> <code>{contador}</code>.
         </p>
+
+        <button onClick={sumar}>
+            SUMAR
+        </button>
+
+        <button onClick={restar}>
+            RESTAR
+        </button>
+
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -20,7 +43,7 @@ function App() {
         </a>
       </header>
     </div>
-  );
+    )
 }
 
-export default App;
+export default App
