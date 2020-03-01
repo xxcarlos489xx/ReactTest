@@ -1,46 +1,25 @@
 //const React = require('react')
-import React, {useState} from 'react'
+import React from 'react'
 import logo from './logo.svg';
 import './App.css';
+import ContadorComponent from './componentes/Contador'
+import ListaComponent from './componentes/TodoList'
+import EscogePokemon from './componentes/PokemonList'
 
 const App = () => {
 
-    const [name, setName] = useState('carlos')
-
-    const [contador,setContador] = useState(0);
-
-    const sumar = () => {
-        setContador(contador+1)
-    }
-
-    const restar = () =>{
-        setContador(contador-1)
-    }
+    const name = 'carlos';
+    const lastName = 'villanueva';
+    
 
     return(
         <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-            <div>{name}</div> <code>{contador}</code>.
-        </p>
-
-        <button onClick={sumar}>
-            SUMAR
-        </button>
-
-        <button onClick={restar}>
-            RESTAR
-        </button>
-
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <ContadorComponent nameA={name} lastNameA={lastName}/>
+        <ListaComponent></ListaComponent>
+        <EscogePokemon></EscogePokemon>
+        
       </header>
     </div>
     )
