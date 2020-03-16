@@ -9,7 +9,7 @@ import EscogePokemon from './componentes/PokemonList'
 const App = () => {
 
     const name = 'carlos';
-    const lastName = 'villanueva';
+    const lastName = 'villanueva quito';
     
 
     return(
